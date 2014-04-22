@@ -1,0 +1,30 @@
+-- MYSQL 5.5 MyPrayer script
+-- Hogly Rubio 2014-04-21
+create table
+    tbtablas
+    (
+        tbnumero int default '0' not null,
+        tbcodigo varchar(30),
+        tbclave varchar(30),
+        tbvalstr varchar(250),
+        tbvalint int,
+        tbvalnum decimal(15,2),
+        tbvalfec date,
+        primary key (tbnumero),
+        constraint uq_tbtablas_cod_cla unique (tbcodigo, tbclave)
+    )
+    ENGINE=InnoDB default CHARSET=latin1;
+    
+create table
+    pedido
+    (
+        pedicons int default '0' not null,
+        pedifech datetime,
+        pedinomb varchar(100),
+        peditext varchar(4000),
+        pedimoti varchar(200),
+        pedisexo varchar(1),
+        pediigle varchar(100),
+        primary key (pedicons)
+    )
+    ENGINE=InnoDB default CHARSET=latin1;
