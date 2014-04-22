@@ -15,6 +15,15 @@ create table
     )
     ENGINE=InnoDB default CHARSET=latin1;
     
+insert into tbtablas (tbnumero, tbcodigo, tbclave, tbvalstr, tbvalint, tbvalnum, tbvalfec) values (100000, 'PEDIMOTI', '.', null, null, null, null);
+insert into tbtablas (tbnumero, tbcodigo, tbclave, tbvalstr, tbvalint, tbvalnum, tbvalfec) values (100001, 'PEDIMOTI', 'Vidaespiritual', null, null, null, null);
+insert into tbtablas (tbnumero, tbcodigo, tbclave, tbvalstr, tbvalint, tbvalnum, tbvalfec) values (100002, 'PEDIMOTI', 'Salud', null, null, null, null);
+insert into tbtablas (tbnumero, tbcodigo, tbclave, tbvalstr, tbvalint, tbvalnum, tbvalfec) values (100003, 'PEDIMOTI', 'Familia', null, null, null, null);
+insert into tbtablas (tbnumero, tbcodigo, tbclave, tbvalstr, tbvalint, tbvalnum, tbvalfec) values (100004, 'PEDIMOTI', 'Estudio', null, null, null, null);
+insert into tbtablas (tbnumero, tbcodigo, tbclave, tbvalstr, tbvalint, tbvalnum, tbvalfec) values (100005, 'PEDIMOTI', 'Trabajo', null, null, null, null);
+insert into tbtablas (tbnumero, tbcodigo, tbclave, tbvalstr, tbvalint, tbvalnum, tbvalfec) values (100006, 'PEDIMOTI', 'Otro', null, null, null, null);
+
+    
 create table
     pedido
     (
@@ -28,3 +37,4 @@ create table
         primary key (pedicons)
     )
     ENGINE=InnoDB default CHARSET=latin1;
+    
