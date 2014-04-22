@@ -1,5 +1,0 @@
-WebContent
-hogly.txt
-pom.xml
-src
-target
