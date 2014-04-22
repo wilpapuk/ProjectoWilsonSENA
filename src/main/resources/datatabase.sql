@@ -37,4 +37,20 @@ create table
         primary key (pedicons)
     )
     ENGINE=InnoDB default CHARSET=latin1;
+
+create table
+    app_tablas
+    (
+        tablcons int default '0' not null comment 'ID DE LA TABLA',
+        tablnomb varchar(30) comment 'NOMBRE DE LA TABLA',
+        tablpkey int comment 'VALOR DE LA ULTIMA PK',
+        primary key (tablcons),
+        constraint uq_app_tablas unique (tablnomb)
+    )
+    ENGINE=InnoDB default CHARSET=latin1
     
+insert into app_tablas (tablcons, tablnomb, tablpkey) values (1, 'PERSONA', 2);
+insert into app_tablas (tablcons, tablnomb, tablpkey) values (2, 'ITEM', 0);
+insert into app_tablas (tablcons, tablnomb, tablpkey) values (3, 'MOVIDOCU', 0);
+insert into app_tablas (tablcons, tablnomb, tablpkey) values (4, 'MOVIDETA', 0);
+insert into app_tablas (tablcons, tablnomb, tablpkey) values (5, 'PEDIDO', 107);
