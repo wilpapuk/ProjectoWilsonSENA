@@ -1,7 +1,5 @@
 package com.terasoft.myprayer.test;
 
-import static org.junit.Assert.*;
-
 import java.util.List;
 
 import org.apache.commons.logging.Log;
@@ -37,7 +35,7 @@ public class TestPedidoService {
 		pedido.setPedinomb("HOGLY RUBIO");
 		pedido.setPeditext("oren por mi!");
 		pedido.setPedisexo("M");
-		Long id = pedidoService.agregar(pedido);
+		pedidoService.agregar(pedido);
 		logger.info("agregado: " + pedido);
 		//assertEquals(new Long(1), pedidoService.contar());
 		

@@ -16,6 +16,13 @@
 		<property name="password" value="Akc123456"/>
 	</bean>
 
+<!-- 	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource"> -->
+<!-- 		<property name="driverClassName" value="com.mysql.jdbc.Driver"/> -->
+<!-- 		<property name="url" value="jdbc:mysql://mysql1001.mochahost.com:3306/pymeapps_myprayer"/> -->
+<!-- 		<property name="username" value="pymeapps_root"/> -->
+<!-- 		<property name="password" value="Pyme2014"/> -->
+<!-- 	</bean> -->
+
 	<tx:annotation-driven transaction-manager="transactionManager"/>
 
 	<bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
@@ -29,5 +36,7 @@
 	<bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
 	 	<property name="sessionFactory" ref="sessionFactory"/>
 	</bean>
+	
+	<import resource="security-config.xml"/>
 	
 </beans>

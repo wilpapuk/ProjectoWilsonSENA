@@ -1,16 +1,12 @@
 package com.terasoft.myprayer.repository;
 
 import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
 
-import org.aspectj.apache.bcel.generic.Type;
-import org.hibernate.Hibernate;
 import org.hibernate.Query;
 import org.hibernate.SQLQuery;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.Hibernate;
 import org.hibernate.type.LongType;
 import org.hibernate.type.StringType;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -80,13 +76,13 @@ public class PedidoRepositoryImpl implements PedidoRepository {
 		cal.set(Calendar.SECOND, 0);
 		cal.set(Calendar.MILLISECOND, 0);
 		
-		String sql = "select pedisexo, count(*) cant " + "\n" +
-					 "from pedido " + "\n" +
-					 "where pedifech >= :fecha " + "\n" +
-					 "group by pedisexo";
+		String sql = "select PEDISEXO, count(*) CANT " + "\n" +
+					 "from PEDIDO " + "\n" +
+					 "where PEDIFECH >= :fecha " + "\n" +
+					 "group by PEDISEXO";
 		SQLQuery query = (SQLQuery) getSession().createSQLQuery(sql)
-			.addScalar("pedisexo", StringType.INSTANCE)
-			.addScalar("cant", LongType.INSTANCE)
+			.addScalar("PEDISEXO", StringType.INSTANCE)
+			.addScalar("CANT", LongType.INSTANCE)
 			.setParameter("fecha", cal.getTime());
 		
 		return query.list();
@@ -100,15 +96,15 @@ public class PedidoRepositoryImpl implements PedidoRepository {
 		cal.set(Calendar.SECOND, 0);
 		cal.set(Calendar.MILLISECOND, 0);
 	    
-		String sql = "select tbclave, count(*) cant " + "\n" +
-					 "from tbtablas, pedido " + "\n" + 
-					 "where pedifech >= :fecha " + "\n" +
-					 "  and tbcodigo = 'PEDIMOTI' "+ "\n" +
-					 "  and pedimoti like tbvalstr " + "\n" +
-					 "group by tbclave ";
+		String sql = "select TBCLAVE, count(*) CANT " + "\n" +
+					 "from TBTABLAS, PEDIDO " + "\n" + 
+					 "where PEDIFECH >= :fecha " + "\n" +
+					 "  and TBCODIGO = 'PEDIMOTI' "+ "\n" +
+					 "  and PEDIMOTI like TBVALSTR " + "\n" +
+					 "group by TBCLAVE ";
 		Query query = getSession().createSQLQuery(sql)
-				.addScalar("tbclave", StringType.INSTANCE)
-				.addScalar("cant", LongType.INSTANCE)
+				.addScalar("TBCLAVE", StringType.INSTANCE)
+				.addScalar("CANT", LongType.INSTANCE)
 				.setParameter("fecha", cal.getTime());
 				
 		return query.list();
