@@ -9,19 +9,12 @@
 
 	<context:component-scan base-package="com.terasoft.myprayer" />
 	
-	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-		<property name="driverClassName" value="oracle.jdbc.OracleDriver"/>
-		<property name="url" value="jdbc:oracle:thin:@10.0.0.91:1521:KPITALUP"/>
-		<property name="username" value="hoglrubt"/>
-		<property name="password" value="Akc123456"/>
-	</bean>
-
-<!-- 	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource"> -->
-<!-- 		<property name="driverClassName" value="com.mysql.jdbc.Driver"/> -->
-<!-- 		<property name="url" value="jdbc:mysql://mysql1001.mochahost.com:3306/pymeapps_myprayer"/> -->
-<!-- 		<property name="username" value="pymeapps_root"/> -->
-<!-- 		<property name="password" value="Pyme2014"/> -->
-<!-- 	</bean> -->
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource"> 
+ 		<property name="driverClassName" value="com.mysql.jdbc.Driver"/> 
+ 		<property name="url" value="jdbc:mysql://localhost:3306/myprayer"/> 
+ 		<property name="username" value="root"/> 
+ 		<property name="password" value="1234"/> 
+ 	</bean> 
 
 	<tx:annotation-driven transaction-manager="transactionManager"/>
 

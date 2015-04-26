@@ -13,7 +13,7 @@
   	<dependency>
   		<groupId>log4j</groupId>
   		<artifactId>log4j</artifactId>
-  		<version>1.2.15</version>
+  		<version>1.2.14</version>
   	</dependency>
   	<dependency>
   		<groupId>junit</groupId>
@@ -64,11 +64,6 @@
   		<groupId>jstl</groupId>
   		<artifactId>jstl</artifactId>
   		<version>1.2</version>
-  	</dependency>
-  	<dependency>
-  		<groupId>akc-ojdbc5</groupId>
-  		<artifactId>akc-ojdbc5</artifactId>
-  		<version>11.2.0.3</version>
   	</dependency>
   	<dependency>
   		<groupId>org.springframework</groupId>
