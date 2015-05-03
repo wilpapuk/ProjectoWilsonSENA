@@ -3,32 +3,38 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:tx="http://www.springframework.org/schema/tx"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.2.xsd
-		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd">
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.2.xsd">
 
-	<context:component-scan base-package="com.terasoft.myprayer" />
+	<context:component-scan base-package="com.proyectosena.*" />
 	
 	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource"> 
  		<property name="driverClassName" value="com.mysql.jdbc.Driver"/> 
- 		<property name="url" value="jdbc:mysql://localhost:3306/autenticacion"/> 
+ 		<property name="url" value="jdbc:mysql://localhost:3306/proyectosena"/> 
  		<property name="username" value="root"/> 
  		<property name="password" value="1234"/> 
  	</bean> 
 
 	<tx:annotation-driven transaction-manager="transactionManager"/>
 
+	<mvc:annotation-driven/>
+	
 	<bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
 		<property name="dataSource" ref="dataSource"/>
 		<property name="configLocation">
             <value>classpath:hibernate.cfg.xml</value>
         </property>
-        <property name="packagesToScan" value="com.terasoft.myprayer.repository"/>
+        <property name="packagesToScan" value="com.proyectosena.repository.*"/>
 	</bean>
 
 	<bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
 	 	<property name="sessionFactory" ref="sessionFactory"/>
 	</bean>
+	
+	<bean id="gson" class="com.google.gson.Gson" />
 	
 	<import resource="security-config.xml"/>
 	

@@ -11,20 +11,33 @@
 
 	<security:http use-expressions="true" access-denied-page="/denied.jsp">
 		<security:form-login login-page="/login.jsp" authentication-failure-url="/login.jsp?login_error=true"/>
-		<security:intercept-url pattern="/pray/**" access="hasRole('ROLE_VIEWER')"/>
+		
 		<security:logout/>		
 	</security:http>
 	
 	<security:authentication-manager>
 		<security:authentication-provider>
 			<security:jdbc-user-service data-source-ref="dataSource"
-				users-by-username-query="select nombre,clave,enabled from usuario where nombre=?"
-				authorities-by-username-query="select usuario.nombre,role.nombre 
-											from role
-											join role_usuario on (role_idrole=idrole)
-											join usuario on (usuario_idusuario=idusuario)
-											where usuario.nombre=?" />
+				users-by-username-query="select usuario,contrasena,enabled from usuario where usuario=?"
+				authorities-by-username-query="select usuario.usuario,rol.nombre 
+											from usuario
+											join usuario_rol on (usuario_rol.USUARIO_IDUSUARIO=usuario.IDUSUARIO)
+											join rol on (rol.IDROL=usuario_rol.ROL_IDROL)
+											where usuario.usuario=?" />
 		</security:authentication-provider>
 	</security:authentication-manager>
 
+	<security:global-method-security secured-annotations="enabled" jsr250-annotations="enabled" access-decision-manager-ref="accessDecisionManager" />
+	
+	<bean id="accessDecisionManager" class="org.springframework.security.access.vote.AffirmativeBased">
+		<property name="decisionVoters">
+			<list>
+				<bean class="org.springframework.security.access.vote.RoleVoter">
+					<property name="rolePrefix">
+						<value />
+					</property>
+				</bean>
+			</list>
+		</property>
+	</bean>
 </beans>
