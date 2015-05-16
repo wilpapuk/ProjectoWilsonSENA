@@ -12,7 +12,7 @@
 <p><a href="../index.html">Return to Home Page</a> or</p>
 <p><a href="../j_spring_security_logout">Logout</a></p>
 
-</div>
+
 </body>
 
 </html>

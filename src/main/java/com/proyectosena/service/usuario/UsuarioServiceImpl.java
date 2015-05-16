@@ -44,7 +44,7 @@ public class UsuarioServiceImpl implements UsuarioService{
 	}
 	
 	@Override
-	@RolesAllowed({"ADMINISTRATOR_ADMINISTRATOR", "APP_USUARIO__ALL", "APP_USUARIO__READ"})
+	@RolesAllowed({"ADMINISTRATOR_ADMINISTRATOR", "CLIENTE__ALL", "CLIENTE__READ"})
 	public String list(Long id){
 		Usuario listAll=usuarioRepository.list(id);
 		
@@ -56,7 +56,7 @@ public class UsuarioServiceImpl implements UsuarioService{
 	}
 	
 	@Override
-	@RolesAllowed({"ADMINISTRATOR_ADMINISTRATOR", "APP_USUARIO__ALL", "APP_USUARIO__READ"})
+	@RolesAllowed({"ADMINISTRATOR_ADMINISTRATOR", "CLIENTE__ALL", "CLIENTE__READ"})
 	public String listAll(int pageSize, int page){
 	
 		int limit=pageSize*page;
@@ -78,19 +78,19 @@ public class UsuarioServiceImpl implements UsuarioService{
 	}
 	
 	@Override
-	@RolesAllowed({"ADMINISTRATOR_ADMINISTRATOR", "APP_USUARIO__ALL", "APP_USUARIO__UPDATE"})
+	@RolesAllowed({"ADMINISTRATOR_ADMINISTRATOR", "CLIENTE__ALL", "APP_USUARIO__UPDATE"})
 	public String update(Usuario usuario){
 		return gson.toJson(usuarioRepository.update(usuario));
 	}
 	
 	@Override
-	@RolesAllowed({"ADMINISTRATOR_ADMINISTRATOR", "APP_USUARIO__ALL", "APP_USUARIO__DELETE"})
+	@RolesAllowed({"ADMINISTRATOR_ADMINISTRATOR", "CLIENTE__ALL", "APP_USUARIO__DELETE"})
 	public void delete(Usuario usuario){
 		usuarioRepository.delete(usuario);
 	}
 	
 	@Override
-	@RolesAllowed({"ADMINISTRATOR_ADMINISTRATOR", "APP_USUARIO__ALL", "APP_USUARIO__CREATE"})
+	@RolesAllowed({"ADMINISTRATOR_ADMINISTRATOR", "CLIENTE__ALL", "APP_USUARIO__CREATE"})
 	public String insert(Usuario usuario){
 		return gson.toJson(usuarioRepository.insert(usuario));
 	}

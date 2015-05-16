@@ -33,32 +33,20 @@ public class Usuario {
 	                 initialValue = 1,                //<= Valor inicial de la llave primario
 	                 allocationSize = 1)              //<= Valor a buscar por medio de la llave primaria
 	@GeneratedValue(strategy = GenerationType.TABLE, generator = "usuario_GEN")  
-	@Column(name = "IDUSUARIO")
+	@Column(name = "idUSUARIO")
 	protected Long idusuario; 
-	 
-	@Column(name = "NOMBRE")
-	protected String nombre; 
-	 
-	@Column(name = "APELLIDO")
-	protected String apellido; 
-	 
-	@Column(name = "TELEFONO")
-	protected String telefono; 
-	 
-	@Column(name = "CEDULA")
-	protected String cedula; 
-	 
-	@Column(name = "DIRECCION")
-	protected String direccion; 
 	 
 	@Column(name = "USUARIO")
 	protected String usuario; 
 	 
-	@Column(name = "CONTRASENA")
-	protected String contrasena; 
+	@Column(name = "CORREO")
+	protected String correo; 
 	 
-	@Column(name = "ENABLED")
-	protected Integer enabled; 
+	@Column(name = "PASSWORD1")
+	protected String password1; 
+	 
+	@Column(name = "ESTADO")
+	protected String estado; 
 
 	public Usuario(){
 	
@@ -72,46 +60,6 @@ public class Usuario {
 		this.idusuario = idusuario;
 	}
 
-	public String getNombre(){
-		return nombre;
-	}
-	
-	public void setNombre(String nombre){
-		this.nombre = nombre;
-	}
-
-	public String getApellido(){
-		return apellido;
-	}
-	
-	public void setApellido(String apellido){
-		this.apellido = apellido;
-	}
-
-	public String getTelefono(){
-		return telefono;
-	}
-	
-	public void setTelefono(String telefono){
-		this.telefono = telefono;
-	}
-
-	public String getCedula(){
-		return cedula;
-	}
-	
-	public void setCedula(String cedula){
-		this.cedula = cedula;
-	}
-
-	public String getDireccion(){
-		return direccion;
-	}
-	
-	public void setDireccion(String direccion){
-		this.direccion = direccion;
-	}
-
 	public String getUsuario(){
 		return usuario;
 	}
@@ -120,40 +68,44 @@ public class Usuario {
 		this.usuario = usuario;
 	}
 
-	public String getContrasena(){
-		return contrasena;
+	public String getCorreo(){
+		return correo;
 	}
 	
-	public void setContrasena(String contrasena){
-		this.contrasena = contrasena;
+	public void setCorreo(String correo){
+		this.correo = correo;
 	}
 
-	public Integer getEnabled(){
-		return enabled;
+	public String getPassword1(){
+		return password1;
 	}
 	
-	public void setEnabled(Integer enabled){
-		this.enabled = enabled;
+	public void setPassword1(String password1){
+		this.password1 = password1;
+	}
+
+	public String getEstado(){
+		return estado;
+	}
+	
+	public void setEstado(String estado){
+		this.estado = estado;
 	}
 
 
 	static public String[] getNames(){
-		return new String[]{ "IDUSUARIO", "NOMBRE", "APELLIDO", "TELEFONO", "CEDULA", "DIRECCION", "USUARIO", "CONTRASENA", "ENABLED" };
+		return new String[]{ "idUSUARIO", "USUARIO", "CORREO", "PASSWORD1", "ESTADO" };
 	}		
 	
 	static public String getColumnNames(){
-		return " IDUSUARIO, NOMBRE, APELLIDO, TELEFONO, CEDULA, DIRECCION, USUARIO, CONTRASENA, ENABLED ";
+		return " idUSUARIO, USUARIO, CORREO, PASSWORD1, ESTADO ";
 	}
 	
 	public String toString(){
-		return " IDUSUARIO: "+ this.idusuario 
-			+" NOMBRE: "+ this.nombre 
-			+" APELLIDO: "+ this.apellido 
-			+" TELEFONO: "+ this.telefono 
-			+" CEDULA: "+ this.cedula 
-			+" DIRECCION: "+ this.direccion 
+		return " idUSUARIO: "+ this.idusuario 
 			+" USUARIO: "+ this.usuario 
-			+" CONTRASENA: "+ this.contrasena 
-			+" ENABLED: "+ this.enabled ;
+			+" CORREO: "+ this.correo 
+			+" PASSWORD1: "+ this.password1 
+			+" ESTADO: "+ this.estado ;
 	}
 }

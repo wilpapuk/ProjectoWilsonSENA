@@ -13,9 +13,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
-import com.proyectosena.repository.usuario.Usuario; 
-import com.proyectosena.service.usuario.UsuarioService;
 
+import com.proyectosena.repository.usuario.Usuario;
+import com.proyectosena.service.usuario.UsuarioService;
 
 @Controller
 @RequestMapping("/Usuario")

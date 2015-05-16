@@ -145,14 +145,10 @@ public class UsuarioRepositoryImpl implements UsuarioRepository{
 	/**
 	 * Metodo para ingresar un registro de la tabla Usuario
 	 * @value idusuario
-	 * @value nombre
-	 * @value apellido
-	 * @value telefono
-	 * @value cedula
-	 * @value direccion
 	 * @value usuario
-	 * @value contrasena
-	 * @value enabled
+	 * @value correo
+	 * @value password1
+	 * @value estado
 	 * @return Usuario = objeto de la case Usuario que contiene los datos ingresados
 	 * @throws Exception
 	 */
